@@ -1,0 +1,71 @@
+<template>
+    <StyledContentBlock>
+    <StyledRegistrationBlock>
+    <div>
+    <BootstrapImage
+    src="require(@/assets/img/78.jpg)"
+    width="85"
+    height="85"
+    />
+    </div>
+        <div>
+            Login: <BootstrapInput v-model="formData.login"/>
+            Password: <BootstrapInput v-model="formData.password"/>
+        </div>
+        <div>
+            Buttons
+        </div>
+    </StyledRegistrationBlock>
+    </StyledContentBlock>
+</template>
+
+<script>
+    import styled from 'vue-styled-components';
+    import BootstrapImage from 'bootstrap-vue/es/components/image/img';
+    import BootstrapInput from 'bootstrap-vue/es/components/form-input/form-input';
+    import BootstrapModal from 'bootstrap-vue/es/components/modal/modal';
+
+    const StyledContentBlock= styled('div')`justify-items: center;
+    display: grid;
+    grid-template-rows: 1fr;`
+       ;
+
+
+    const StyledRegistrationBlock =styled('div')`
+     border: 1px solid blue;
+        width: 300px;
+        display: grid;
+        grid-template-rows: 1fr 3fr 1fr;
+    `;
+
+    export default {
+        name: 'Registration',
+        components:{
+            StyledRegistrationBlock,
+            StyledContentBlock,
+            BootstrapImage,
+            BootstrapInput,
+            BootstrapModal
+        },
+        data(){
+            return{
+                authorize:false,
+                formData:{
+                    login:'',
+                    password: ''
+                }
+            };
+        },
+        // watch:{
+        //     'formData.login'(newVal){
+        //
+        //     }
+        // },
+    }
+</script>
+
+<style scoped>
+    .content{
+
+    }
+</style>
